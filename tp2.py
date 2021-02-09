@@ -8,3 +8,6 @@ class Box:
 
     def __contains__(self, truc):
         return truc in self._contents
+
+    def remove(self, truc):
+        self._contents.remove(truc)
