@@ -1,6 +1,7 @@
 class Box:
     def __init__(self):
         self._contents = []
+        self._status = True
 
     def add(self,truc):
         self._contents.append(truc)
@@ -10,3 +11,12 @@ class Box:
 
     def remove(self, truc):
         self._contents.remove(truc)
+
+    def is_open(self):
+        return self._status
+
+    def open(self):
+        self._status = True
+
+    def close(self):
+        self._status = False
