@@ -8,7 +8,6 @@ def test_box_add():
     b.add("truc1")
     b.add("truc2")
 
-
 def test_box_in():
     b = Box()
     b.add("truc1")
@@ -16,3 +15,10 @@ def test_box_in():
 
     assert "truc1" in b
     assert "truc2" in b
+
+def test_box_remove():
+    b = Box()
+    b.add("truc1")
+    b.remove("truc1")
+
+    assert "truc1" not in b
