@@ -1,6 +1,6 @@
 class Box:
     def __init__(self):
-        self.contents = []
+        self._contents = []
 
     def add(self,truc):
-        self.contents.append(truc)
+        self._contents.append(truc)
