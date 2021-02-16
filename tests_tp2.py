@@ -43,3 +43,7 @@ def test_action_look():
 
     b.close()
     assert b.action_look() == "la boite est fermee"
+
+def test_thing_create():
+    t = Thing(3)
+    assert t.volume == 3
