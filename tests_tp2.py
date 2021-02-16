@@ -46,4 +46,4 @@ def test_action_look():
 
 def test_thing_create():
     t = Thing(3)
-    assert t.volume == 3
+    assert t.volume() == 3
