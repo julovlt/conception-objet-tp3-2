@@ -29,4 +29,7 @@ class Box:
 
 class Thing:
     def __init__(self, v):
-        self.volume = v
+        self._volume = v
+
+    def volume(self):
+        return self._volume
