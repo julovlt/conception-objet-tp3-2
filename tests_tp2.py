@@ -31,3 +31,15 @@ def test_box_is_open():
 
     b.close()
     assert not b.is_open()
+
+def test_action_look():
+    b = Box()
+
+    b.add("ceci")
+    b.add("cela")
+
+    b.open()
+    assert b.action_look() == "la boite contient : ceci, cela"
+
+    b.close()
+    assert b.action_look() == "la boite est fermee"
