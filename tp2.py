@@ -2,6 +2,7 @@ class Box:
     def __init__(self):
         self._contents = []
         self._status = True
+        self._capacity = None
 
     def add(self,truc):
         self._contents.append(truc)
@@ -27,6 +28,12 @@ class Box:
         else:
             return "la boite est fermee"
 
+    def set_capacity(self, c):
+        self._capacity = c
+
+    def capacity(self):
+        return self._capacity
+    
 class Thing:
     def __init__(self, v):
         self._volume = v
