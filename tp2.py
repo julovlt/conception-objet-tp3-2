@@ -26,3 +26,7 @@ class Box:
             return "la boite contient : " + ", ".join(self._contents)
         else:
             return "la boite est fermee"
+
+class Thing:
+    def __init__(self, v):
+        self.volume = v
