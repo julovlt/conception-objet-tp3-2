@@ -98,3 +98,17 @@ def test_has_name():
 
     assert t.has_name("bidule")
     assert not t.has_name("bidule1")
+
+def test_find():
+    b = Box()
+    t = Thing(3)
+    t.set_name("bidule")
+
+    b.open()
+    b.action_add(t)
+
+    assert b.find("bidule") == t
+    assert b.find("bidule1") is None
+
+    b.close()
+    assert b.find("bidule") is None
