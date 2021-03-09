@@ -1,8 +1,8 @@
 class Box:
-    def __init__(self):
+    def __init__(self, is_open=True, capacity=None):
         self._contents = []
-        self._status = True
-        self._capacity = None
+        self._status = is_open
+        self._capacity = capacity
 
     def add(self,truc):
         self._contents.append(truc)
@@ -56,9 +56,9 @@ class Box:
             return None
     
 class Thing:
-    def __init__(self, v):
+    def __init__(self, v, name=None):
         self._volume = v
-        self._name = None
+        self._name = name
 
     def __repr__(self):
         return self._name
