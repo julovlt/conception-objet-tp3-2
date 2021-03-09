@@ -85,3 +85,9 @@ def test_action_add():
     assert b.capacity() == 0
 
     assert not b.action_add(t)
+
+def test_repr_thing():
+    t = Thing(3)
+    t.set_name("bidule")
+
+    assert t.__repr__() == "bidule"
