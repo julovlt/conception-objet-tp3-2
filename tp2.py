@@ -49,6 +49,13 @@ class Box:
 class Thing:
     def __init__(self, v):
         self._volume = v
+        self._name = None
 
+    def __repr__(self):
+        return self._name
+
+    def set_name(self, name):
+        self._name = name
+        
     def volume(self):
         return self._volume
