@@ -151,3 +151,21 @@ def test_from_yaml_thing():
 
     assert t2_yaml.volume() == 4
     assert t2_yaml.has_name("bidule1")
+
+def test_list_from_yaml():
+    text= """
+    - type: Box
+      is_open: true
+      capacity: 4
+    - type: Thing
+      volume: 3
+      name: bidule
+    """
+    stream = io.StringIO(text)
+    l_yaml = yaml.load(stream)
+    l = list_from_yaml(l_yaml)
+
+    assert l[0].is_open()
+    assert l[0].capacity() == 4
+    assert l[1].volume() == 3
+    assert l[1].has_name("bidule")
