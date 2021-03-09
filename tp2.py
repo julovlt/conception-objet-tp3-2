@@ -1,4 +1,8 @@
 class Box:
+    @staticmethod
+    def from_yaml(data):
+        return Box(is_open=data['is_open'], capacity=data['capacity'])
+
     def __init__(self, is_open=True, capacity=None):
         self._contents = []
         self._status = is_open
@@ -54,7 +58,7 @@ class Box:
             return None
         else:
             return None
-    
+
 class Thing:
     def __init__(self, v, name=None):
         self._volume = v
@@ -68,6 +72,6 @@ class Thing:
 
     def has_name(self, name):
         return self._name == name
-    
+
     def volume(self):
         return self._volume
