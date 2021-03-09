@@ -56,6 +56,9 @@ class Thing:
 
     def set_name(self, name):
         self._name = name
-        
+
+    def has_name(self, name):
+        return self._name == name
+    
     def volume(self):
         return self._volume

@@ -96,4 +96,5 @@ def test_has_name():
     t = Thing(3)
     t.set_name("bidule")
 
-    assert t.has_name() == "bidule"
+    assert t.has_name("bidule")
+    assert not t.has_name("bidule1")
