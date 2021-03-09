@@ -45,7 +45,16 @@ class Box:
             return True
         else:
             return False
-        
+
+    def find(self, t_name):
+        if self.is_open():
+            for t in self._contents:
+                if t.has_name(t_name):
+                    return t
+            return None
+        else:
+            return None
+    
 class Thing:
     def __init__(self, v):
         self._volume = v
