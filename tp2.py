@@ -37,6 +37,15 @@ class Box:
     def has_room_for(self, t):
         return self.capacity() is None or t.volume() <= self.capacity()
 
+    def action_add(self, t):
+        if self.is_open() and self.has_room_for(t):
+            self.add(t)
+            if self.capacity() is not None:
+                self.set_capacity(self.capacity() - t.volume())
+            return True
+        else:
+            return False
+        
 class Thing:
     def __init__(self, v):
         self._volume = v
