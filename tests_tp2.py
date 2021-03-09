@@ -147,7 +147,7 @@ def test_from_yaml_thing():
     t2_yaml = Thing.from_yaml(l[1])
 
     assert t1_yaml.volume() == 5
-    assert t1_yaml.has_name() == "bidule"
+    assert t1_yaml.has_name("bidule")
 
     assert t2_yaml.volume() == 4
-    assert t2_yaml.has_name() == "bidule1"
+    assert t2_yaml.has_name("bidule1")
