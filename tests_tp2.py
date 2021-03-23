@@ -174,7 +174,5 @@ def test_open_with():
     b = Box(is_open=False)
     t = Thing(5, 'erekrroko')
     b.set_key(t)
-    b.open()
-    assert not b.is_open()
-    b.open_whith(t)
+    b.open_with(t)
     assert b.is_open()

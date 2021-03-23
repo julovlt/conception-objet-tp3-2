@@ -12,10 +12,11 @@ class Box:
     def from_yaml(data):
         return Box(is_open=data['is_open'], capacity=data['capacity'])
 
-    def __init__(self, is_open=True, capacity=None):
+    def __init__(self, is_open=True, capacity=None, key=None):
         self._contents = []
         self._status = is_open
         self._capacity = capacity
+        self._key = key
 
     def add(self,truc):
         self._contents.append(truc)
@@ -30,7 +31,8 @@ class Box:
         return self._status
 
     def open(self):
-        self._status = True
+        if self._key == None:
+            self._status = True
 
     def close(self):
         self._status = False
@@ -67,6 +69,13 @@ class Box:
             return None
         else:
             return None
+
+    def open_with(self,t):
+        if self._key == t:
+            self._status = True
+
+    def set_key(self,t):
+        self._key = t
 
 class Thing:
     def from_yaml(data):
