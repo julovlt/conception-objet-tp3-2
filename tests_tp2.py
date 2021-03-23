@@ -169,3 +169,12 @@ def test_list_from_yaml():
     assert l[0].capacity() == 4
     assert l[1].volume() == 3
     assert l[1].has_name("bidule")
+
+def test_open_with():
+    b = Box(is_open=False)
+    t = Thing(5, 'erekrroko')
+    b.set_key(t)
+    b.open()
+    assert not b.is_open()
+    b.open_whith(t)
+    assert b.is_open()
